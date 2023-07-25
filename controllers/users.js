@@ -6,11 +6,8 @@ const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 
 module.exports.getUser = (req, res, next) => {
-  const { name, email } = req.body;
-
   User.findById(
     req.user._id,
-    { name, email },
   ).orFail()
     .then((user) => {
       res.send({ data: user });
