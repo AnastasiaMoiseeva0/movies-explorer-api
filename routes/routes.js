@@ -7,12 +7,17 @@ const {
   createUser,
 } = require('../controllers/users');
 
+const {
+  validationLogin,
+  validationCreateUser,
+} = require('../middlewares/validationUser');
+
 router.use('/users', auth, require('./users'));
 router.use('/movies', auth, require('./movies'));
 
-router.post('/signin', login);
+router.post('/signin', validationLogin, login);
 
-router.post('/signup', createUser);
+router.post('/signup', validationCreateUser, createUser);
 
 router.use('*', auth, (req, res, next) => { next(new NotFoundError('Неккоректный путь')); });
 
