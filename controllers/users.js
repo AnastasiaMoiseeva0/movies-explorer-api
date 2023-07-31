@@ -37,8 +37,9 @@ module.exports.updateUser = (req, res, next) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные при обновлении профиля'));
         return;
-      }
-      if (err.name === 'DocumentNotFoundError') {
+      } if (err.code === 11000) {
+        next(new ConflictError('Указанный email уже занят'));
+      } if (err.name === 'DocumentNotFoundError') {
         next(new NotFoundError(`Пользователь с указанным Id - ${req.user._id} не найден`));
       } else {
         next(err);

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { errors } = require('celebrate');
 const auth = require('../middlewares/auth');
 const errorsMiddlewares = require('../middlewares/errorsMiddlewares');
 const NotFoundError = require('../errors/NotFoundError');
@@ -20,6 +21,7 @@ router.post('/signin', validationLogin, login);
 router.post('/signup', validationCreateUser, createUser);
 
 router.use('*', auth, (req, res, next) => { next(new NotFoundError('Неккоректный путь')); });
+router.use(errors());
 
 router.use(errorsMiddlewares);
 
