@@ -3,13 +3,17 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 require('dotenv').config();
+const helmet = require('helmet');
 const router = require('./routes/routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { limiter } = require('./middlewares/rateLimit');
 
 const { PORT = 3000, MONGO_URL } = process.env;
 
 const app = express();
 
+app.use(limiter);
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
