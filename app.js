@@ -23,6 +23,8 @@ mongoose.connect(MONGO_URL, {
 
 const allowedCors = [
   'http://localhost:3001',
+  'https://amoiseeva.students.nomoredomainsicu.ru',
+  'http://amoiseeva.students.nomoredomainsicu.ru',
 ];
 
 app.use(requestLogger);
