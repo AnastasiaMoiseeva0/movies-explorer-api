@@ -27,7 +27,7 @@ const allowedCors = [
   'http://localhost:3001',
   'https://amoiseeva.students.nomoredomainsicu.ru',
   'http://amoiseeva.students.nomoredomainsicu.ru',
-  'https://anastasiamoiseeva0.github.io/',
+  'https://anastasiamoiseeva0.github.io',
 ];
 
 app.use(requestLogger);

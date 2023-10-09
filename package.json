@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "lint": "npx eslint .",
-    "start": "node app.js",
-    "atlas": "atlas login"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "Moiseeva Anastasiya",
@@ -28,7 +27,6 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
     "mongoose-validator": "^2.1.0",
-    "surge": "^0.23.1",
     "validator": "^13.9.0",
     "winston": "^3.10.0"
   },
