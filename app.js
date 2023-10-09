@@ -17,9 +17,11 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(MONGO_URL, {
-  useNewUrlParser: true,
-});
+if (MONGO_URL) {
+  mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+  });
+}
 
 const allowedCors = [
   'http://localhost:3001',
