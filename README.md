@@ -15,10 +15,9 @@
  - Валидируются приходящие на сервер запросы.
  - реализована централизованная обработка ошибок.
  - реализовано логирование.
- - создан сервер, доменное имя прикреплено к серверу.
+
+Инструменты и стек: #Express #MongoDB #NodeJS #API #Nginx #JWT #Postman 
 
 ## Ссылки на проект
 
-IP 158.160.67.215
-
-Backend https://api.amoiseeva.students.nomoreparties.sbs
+Backend https://movies-explorer-api-vpun.onrender.com
